@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace KasLab.FindPairs.Lib
 {
-    public interface IPairsFinder<TItem>
+    public interface IPairsFinder
     {
-	    IEnumerable<Pair<TItem>> FindPairs(IEnumerable<TItem> items);
+		int PairSum { get; set; }
 
-	    void SetCondition(Func<TItem, TItem, bool> condittion);
+	    IEnumerable<Pair<int>> FindPairs(IEnumerable<int> items);
     }
 }
