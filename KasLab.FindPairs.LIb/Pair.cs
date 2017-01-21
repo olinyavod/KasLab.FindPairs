@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KasLab.FindPairs.LIb
+namespace KasLab.FindPairs.Lib
 {
 	public struct Pair<TItem>
 	{
@@ -13,5 +13,10 @@ namespace KasLab.FindPairs.LIb
 		public TItem Item1 { get; set; }
 
 		public TItem Item2 { get; set; }
+
+		public override string ToString()
+		{
+			return string.Format("({0},{1})", Item1, Item2);
+		}
 	}
 }

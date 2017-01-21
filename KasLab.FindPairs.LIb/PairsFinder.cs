@@ -2,30 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KasLab.FindPairs.LIb
+namespace KasLab.FindPairs.Lib
 {
 	public class PairsFinder<TItem> : IPairsFinder<TItem>
 	{
-		private readonly TItem[] _items;
 		private Func<TItem, TItem, bool> _condition;
 
-		public PairsFinder(IEnumerable<TItem> items)
+		public IEnumerable<Pair<TItem>> FindPairs(IEnumerable<TItem> items)
 		{
-			_items = items.ToArray();
-		}
-
-		public IEnumerable<Pair<TItem>> GetPairs()
-		{
-			if(_items == null)
-				throw new InvalidOperationException("Collection is null");
+			if(items == null)
+				throw new ArgumentNullException(nameof(items));
 			if(_condition == null)
 				throw new InvalidOperationException("Condition not setted.");
-			for(int i = 0; i < _items.Length-1; i++)
+			var itemsArr = items.ToArray();
+			for(int i = 0; i < itemsArr.Length-1; i++)
 			{
-				for (int j=i+1; j < _items.Length; j++)
+				var item1 = itemsArr[i];
+				for (int j=i+1; j < itemsArr.Length; j++)
 				{
-					var item1 = _items[i];
-					var item2 = _items[j];
+					var item2 = itemsArr[j];
 					if (_condition(item1, item2))
 						yield return new Pair<TItem>(item1, item2);
 				}

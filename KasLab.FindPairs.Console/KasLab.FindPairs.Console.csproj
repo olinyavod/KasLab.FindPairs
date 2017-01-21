@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KasLab.FindPairs.LIb\KasLab.FindPairs.LIb.csproj">
+    <ProjectReference Include="..\KasLab.FindPairs.LIb\KasLab.FindPairs.Lib.csproj">
       <Project>{214c639e-d591-4c6a-854c-6485242695ca}</Project>
-      <Name>KasLab.FindPairs.LIb</Name>
+      <Name>KasLab.FindPairs.Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

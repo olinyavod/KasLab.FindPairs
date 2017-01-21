@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KasLab.FindPairs.LIb", "KasLab.FindPairs.LIb\KasLab.FindPairs.LIb.csproj", "{214C639E-D591-4C6A-854C-6485242695CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KasLab.FindPairs.Lib", "KasLab.FindPairs.LIb\KasLab.FindPairs.Lib.csproj", "{214C639E-D591-4C6A-854C-6485242695CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KasLab.FindPairs.Console", "KasLab.FindPairs.Console\KasLab.FindPairs.Console.csproj", "{22E19B4D-9AC8-42AC-8E04-361A186D85C0}"
 EndProject

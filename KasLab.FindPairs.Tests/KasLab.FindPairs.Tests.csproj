@@ -34,6 +34,10 @@
       <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.50.2.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoFixture.3.50.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +50,15 @@
   <ItemGroup>
     <Compile Include="FindPairsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UniquePairFinderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KasLab.FindPairs.LIb\KasLab.FindPairs.LIb.csproj">
+    <ProjectReference Include="..\KasLab.FindPairs.LIb\KasLab.FindPairs.Lib.csproj">
       <Project>{214c639e-d591-4c6a-854c-6485242695ca}</Project>
-      <Name>KasLab.FindPairs.LIb</Name>
+      <Name>KasLab.FindPairs.Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
