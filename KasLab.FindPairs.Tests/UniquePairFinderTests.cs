@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using KasLab.FindPairs.Library;
 using NUnit.Framework;
@@ -13,8 +14,8 @@ namespace KasLab.FindPairs.Tests
 		public void FindOnePairBetweenManyPairs()
 		{
 			var items = new[] { 1, 2, 1, 2, 1, 2, 1, 2 };
-			var finder = new UniquePairsFinder {PairSum = 3};
-			var pairs = finder.FindPairs(items).ToList();
+			var finder = new UniquePairsFinder {PairSum = 3, Source = items};
+			var pairs = finder.FindPairs().ToList();
 
 			Assert.AreEqual(1, pairs.Count, string.Join(";" , pairs));
 		}
@@ -23,8 +24,8 @@ namespace KasLab.FindPairs.Tests
 		public void FindOnePairs()
 		{
 			var items = new[] { 9, 9, 9, 9, 1, 1, 9, 9, 9, 9, 9 };
-			var finder = new UniquePairsFinder {PairSum = 2};
-			var pairs = finder.FindPairs(items).ToList();
+			var finder = new UniquePairsFinder {PairSum = 2, Source = items};
+			var pairs = finder.FindPairs().ToList();
 
 			Assert.AreEqual(1, pairs.Count);
 		}
@@ -33,8 +34,8 @@ namespace KasLab.FindPairs.Tests
 		public void FindTwoPairs()
 		{
 			var items = new[] { 9, 9, 9, 9, 1, 1, 9, 9, 0, 9, 2, 0, 2, 1, 1 };
-			var finder = new UniquePairsFinder {PairSum = 2};
-			var pairs = finder.FindPairs(items).ToList();
+			var finder = new UniquePairsFinder {PairSum = 2, Source = items};
+			var pairs = finder.FindPairs().ToList();
 
 			Assert.AreEqual(2, pairs.Count, string.Join(";", pairs));
 		}
@@ -42,8 +43,8 @@ namespace KasLab.FindPairs.Tests
 		[Test]
 		public void FindZeroPairsInZeroCollection()
 		{
-			var finder = new UniquePairsFinder {PairSum = 2};
-			var pairs = finder.FindPairs(new int[0]).ToList();
+			var finder = new UniquePairsFinder {PairSum = 2, Source = new List<int>()};
+			var pairs = finder.FindPairs().ToList();
 
 			Assert.AreEqual(0, pairs.Count);
 		}
@@ -52,8 +53,8 @@ namespace KasLab.FindPairs.Tests
 		public void FindPairsInNegativeNumbers()
 		{
 			var items = new[] { 9, 9, 9, 9, -1, 1, 9, 9, 0, 9, -2, 0, 2, 1, 1 };
-			var finder = new UniquePairsFinder { PairSum = 0 };
-			var pairs = finder.FindPairs(items).ToList();
+			var finder = new UniquePairsFinder { PairSum = 0, Source = items};
+			var pairs = finder.FindPairs().ToList();
 
 			Assert.AreEqual(3, pairs.Count, string.Join(";", pairs));
 		}
@@ -62,18 +63,18 @@ namespace KasLab.FindPairs.Tests
 		public void FindPairsInAllNegativeNumbers()
 		{
 			var items = new[] { -9, -9, -9, -9, -1, -1, -9, -9, 0, -9, -2, 0, -2, -1, -1 };
-			var finder = new UniquePairsFinder { PairSum = 0 };
-			var pairs = finder.FindPairs(items).ToList();
+			var finder = new UniquePairsFinder { PairSum = 0, Source = items};
+			var pairs = finder.FindPairs().ToList();
 
 			Assert.AreEqual(1, pairs.Count, string.Join(";", pairs));
 		}
 
 		[Test]
-		public void ShouldBeArgumentNullExceptionIfCollectionIsNull()
+		public void ShouldBeInvalidOperationExceptionIfSourceIsNull()
 		{
 			var finder = new PairsFinder();
 			finder.PairSum = 2;
-			Assert.Catch<ArgumentNullException>(() => finder.FindPairs(null).Count());
+			Assert.Catch<InvalidOperationException>(() => finder.FindPairs().Count());
 		}
 
 		

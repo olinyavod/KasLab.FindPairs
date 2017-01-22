@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KasLab.FindPairs.Library
 {
-	public class PairsFinder : IPairsFinder
+	public class PairsFinder : IPairsFinder, ICollectionSource
 	{
-		public IEnumerable<Pair<int>> FindPairs(IEnumerable<int> items)
+		public IEnumerable<Pair<int>> FindPairs()
 		{
-			if(items == null)
-				throw new ArgumentNullException(nameof(items));
-			var itemsArr = items.ToArray();
-			for(int i = 0; i < itemsArr.Length-1; i++)
+			if(Source == null)
+				throw new InvalidOperationException("Source not setted");
+			for(int i = 0; i < Source.Count-1; i++)
 			{
-				var item1 = itemsArr[i];
-				for (int j = i + 1; j < itemsArr.Length; j++)
+				var item1 = Source[i];
+				for (int j = i + 1; j < Source.Count; j++)
 				{
-					var item2 = itemsArr[j];
+					var item2 = Source[j];
 					if ((item1 + item2) == PairSum)
 						yield return new Pair<int>(item1, item2);
 				}
@@ -24,5 +22,7 @@ namespace KasLab.FindPairs.Library
 		}
 
 		public int PairSum { get; set; }
+
+		public IList<int> Source { get; set; }
 	}
 }

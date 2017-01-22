@@ -4,14 +4,12 @@ using System.Linq;
 
 namespace KasLab.FindPairs.Library
 {
-	public class UniquePairsFinder : IPairsFinder
+	public class UniquePairsFinder : IPairsFinder, ICollectionSource
 	{
-
-
-		public IEnumerable<Pair<int>> FindPairs(IEnumerable<int> items)
+		public IEnumerable<Pair<int>> FindPairs()
 		{
-			if (items == null) throw new ArgumentNullException(nameof(items));
-			var itemsArr = items.ToList();
+			if (Source == null) throw new InvalidOperationException("Source not setted");
+			var itemsArr = Source.ToList();
 			itemsArr.Sort();
 			int? lastItem = null;
 			for (int i = 0; i < itemsArr.Count-1; i++)
@@ -39,5 +37,7 @@ namespace KasLab.FindPairs.Library
 		}
 
 		public int PairSum { get; set; }
+
+		public IList<int> Source { get; set; }
 	}
 }

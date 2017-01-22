@@ -6,6 +6,6 @@ namespace KasLab.FindPairs.Library
     {
 		int PairSum { get; set; }
 
-	    IEnumerable<Pair<int>> FindPairs(IEnumerable<int> items);
+	    IEnumerable<Pair<int>> FindPairs();
     }
 }

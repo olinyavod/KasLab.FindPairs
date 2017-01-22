@@ -50,8 +50,13 @@ namespace KasLab.FindPairs.Console
 						items.Add(v);
 					}
 				}
+				var colectionSource = _finder as ICollectionSource;
+				if (colectionSource != null)
+				{
+					colectionSource.Source = items;
+				}
 				System.Console.WriteLine("Your collection: {0}", string.Join(", ", items));
-				var pairs = _finder.FindPairs(items).ToList();
+				var pairs = _finder.FindPairs().ToList();
 				System.Console.WriteLine("Pairs: {0}", string.Join(", ", pairs));
 				System.Console.WriteLine("Pairs count: {0}", pairs.Count);
 				System.Console.Write("Press any key for continue or Q for exit...");
