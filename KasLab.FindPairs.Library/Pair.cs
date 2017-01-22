@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KasLab.FindPairs.Lib
+﻿namespace KasLab.FindPairs.Library
 {
 	public struct Pair<TItem>
 	{

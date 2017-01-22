@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace KasLab.FindPairs.Lib
+namespace KasLab.FindPairs.Library
 {
 	public class UniquePairsFinder : IPairsFinder
 	{

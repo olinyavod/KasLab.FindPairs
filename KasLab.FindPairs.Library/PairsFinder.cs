@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KasLab.FindPairs.Lib
+namespace KasLab.FindPairs.Library
 {
 	public class PairsFinder : IPairsFinder
 	{

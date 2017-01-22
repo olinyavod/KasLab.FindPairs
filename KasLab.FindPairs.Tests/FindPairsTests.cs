@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using KasLab.FindPairs.Lib;
+using KasLab.FindPairs.Library;
 using NUnit.Framework;
 
 namespace KasLab.FindPairs.Tests

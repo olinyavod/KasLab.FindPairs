@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace KasLab.FindPairs.Lib
+namespace KasLab.FindPairs.Library
 {
     public interface IPairsFinder
     {

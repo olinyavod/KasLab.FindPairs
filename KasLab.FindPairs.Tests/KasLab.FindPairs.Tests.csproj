@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KasLab.FindPairs.LIb\KasLab.FindPairs.Lib.csproj">
-      <Project>{214c639e-d591-4c6a-854c-6485242695ca}</Project>
-      <Name>KasLab.FindPairs.Lib</Name>
+    <ProjectReference Include="..\KasLab.FindPairs.Library\KasLab.FindPairs.Library.csproj">
+      <Project>{16c30a74-53a7-483e-bc20-d45dcbaaf2b8}</Project>
+      <Name>KasLab.FindPairs.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

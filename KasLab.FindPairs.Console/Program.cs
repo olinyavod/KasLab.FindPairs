@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KasLab.FindPairs.Lib;
+using KasLab.FindPairs.Library;
 
 namespace KasLab.FindPairs.Console
 {
